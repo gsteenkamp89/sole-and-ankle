@@ -1,10 +1,10 @@
-import React from 'react';
-import styled from 'styled-components/macro';
+import React from "react";
+import styled from "styled-components/macro";
 
-import { COLORS } from '../../constants';
+import { COLORS } from "../../constants";
 
-const Breadcrumbs = ({ children }) => {
-  return <Wrapper>{children}</Wrapper>;
+const Breadcrumbs = ({ children, className }) => {
+  return <Wrapper className={className}>{children}</Wrapper>;
 };
 
 Breadcrumbs.Crumb = ({ href, children, delegated }) => {
@@ -22,7 +22,7 @@ const CrumbWrapper = styled.div`
     margin-left: 8px;
 
     &::before {
-      content: '/';
+      content: "/";
       margin-right: 8px;
       color: ${COLORS.gray[300]};
     }

@@ -1,14 +1,12 @@
-import React from 'react';
-import styled from 'styled-components/macro';
+import React from "react";
+import styled from "styled-components/macro";
 
-import { COLORS, WEIGHTS } from '../../constants';
-import Icon from '../Icon';
+import { COLORS, WEIGHTS } from "../../constants";
+import Icon from "../Icon";
 
 const Select = ({ label, value, children, ...delegated }) => {
   const childArray = React.Children.toArray(children);
-  const selectedChild = childArray.find(
-    (child) => child.props.value === value
-  );
+  const selectedChild = childArray.find((child) => child.props.value === value);
 
   const displayedValue = selectedChild.props.children;
 
@@ -21,18 +19,18 @@ const Select = ({ label, value, children, ...delegated }) => {
 
         <DisplayedBit>
           {displayedValue}
-          <ChevronIcon
-            id="chevron-down"
-            size={24}
-            strokeWidth={1.5}
-          />
+          <ChevronIcon id="chevron-down" size={24} strokeWidth={1.5} />
         </DisplayedBit>
       </SelectWrapper>
     </Wrapper>
   );
 };
 
-const Wrapper = styled.label``;
+const Wrapper = styled.label`
+  display: flex;
+  align-items: center;
+  height: 100%;
+`;
 
 const VisibleLabel = styled.span`
   color: ${COLORS.gray[700]};
@@ -61,7 +59,7 @@ const DisplayedBit = styled.span`
   font-size: 1rem;
   font-weight: ${WEIGHTS.medium};
   color: ${COLORS.gray[900]};
-  padding: 12px 42px 12px 16px;
+  padding: 10px 42px 10px 16px;
   border-radius: 8px;
   pointer-events: none;
 
